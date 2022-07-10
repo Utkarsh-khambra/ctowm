@@ -30,6 +30,8 @@ dependencies:
   flutter:
     sdk: flutter
   dio: ^4.0.6
+  flutter_lorem: ^2.0.0
+  share_plus: ^4.0.10
 
 
   # The following adds the Cupertino Icons font to your application.
