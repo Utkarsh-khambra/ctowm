@@ -69,60 +69,44 @@ class _PostPageState extends State<PostPage>
                 child: Text(lorem(paragraphs: 3, words: 60)),
                 style: TextButton.styleFrom(
                     primary: Colors.black, textStyle: const Text("Hi").style)),
-            SlideTransition(
-                /* visible: _showButtons, */
-                /* duration: const Duration(milliseconds: 500), */
-                /* key: ValueKey<bool>(_showButtons), */
-                /* position: _offsetAnimation, */
-                /* transitionBuilder: (Widget child1, Animation<double> anim) { */
-                /*   return AnimatedBuilder( */
-                /*       animation: _animController, */
-                /*       builder: (context, child) { */
-                /*         return Transform.translate( */
-                /*             offset: Offset(_animController.value * 0, */
-                /*                 _animController.value * 16), */
-                /*             child: child1); */
-                /*       }); */
-                /* }, */
-                position: _offsetAnimation,
-                child: Row(
-                  /* key: ValueKey<bool>(_showButtons), */
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          /* if (!_logedIn) { */
-                          /*   Navigator.of(context).restorablePush(_askForLogin); */
-                          /* } */
-                          /* ++_postLikes; */
-                        },
-                        icon: Icon(Icons.thumb_up, size: _buttonSize),
-                        tooltip: "Like"),
-                    IconButton(
-                        onPressed: () {
-                          /* if (!_logedIn) { */
-                          /*   Navigator.of(context).restorablePush(_askForLogin); */
-                          /* } */
-                          /* ++_postDislikes; */
-                        },
-                        icon: Icon(Icons.thumb_down, size: _buttonSize),
-                        tooltip: "Dislike"),
-                    IconButton(
-                        onPressed: () {
-                          Share.share(_postUrl);
-                        },
-                        icon: Icon(Icons.share, size: _buttonSize),
-                        tooltip: "Share"),
-                    IconButton(
-                        onPressed: () {
-                          /* if (!_logedIn) { */
-                          /*   Navigator.of(context).restorablePush(_askForLogin); */
-                          /* } */
-                        },
-                        icon: Icon(Icons.bookmark, size: _buttonSize),
-                        tooltip: "Bookmark"),
-                  ],
-                ))
+            Row(
+              /* key: ValueKey<bool>(_showButtons), */
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                    onPressed: () {
+                      /* if (!_logedIn) { */
+                      /*   Navigator.of(context).restorablePush(_askForLogin); */
+                      /* } */
+                      /* ++_postLikes; */
+                    },
+                    icon: Icon(Icons.thumb_up, size: _buttonSize),
+                    tooltip: "Like"),
+                IconButton(
+                    onPressed: () {
+                      /* if (!_logedIn) { */
+                      /*   Navigator.of(context).restorablePush(_askForLogin); */
+                      /* } */
+                      /* ++_postDislikes; */
+                    },
+                    icon: Icon(Icons.thumb_down, size: _buttonSize),
+                    tooltip: "Dislike"),
+                IconButton(
+                    onPressed: () {
+                      Share.share(_postUrl);
+                    },
+                    icon: Icon(Icons.share, size: _buttonSize),
+                    tooltip: "Share"),
+                IconButton(
+                    onPressed: () {
+                      /* if (!_logedIn) { */
+                      /*   Navigator.of(context).restorablePush(_askForLogin); */
+                      /* } */
+                    },
+                    icon: Icon(Icons.bookmark, size: _buttonSize),
+                    tooltip: "Bookmark"),
+              ],
+            )
           ])));
         }));
   }

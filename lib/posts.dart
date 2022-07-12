@@ -1,8 +1,9 @@
-import 'package:ctowm/login_page.dart';
+/* import 'package:ctowm/login_page.dart'; */
 import 'package:flutter/material.dart';
 import 'postContentPreview.dart';
 import 'package:ctowm/post_page.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:ctowm/button_row.dart';
 
 class Post extends StatefulWidget {
   const Post({Key? key}) : super(key: key);
@@ -13,15 +14,10 @@ class Post extends StatefulWidget {
 
 class _PostState extends State<Post> {
   /* final _posts = List<String>.generate(10000, (i) => 'Item no $i'); */
-  final _logedIn = false;
   final _titleFont = const TextStyle(fontSize: 20);
-  final _postUrl = "www.example.com";
-  int _postLikes = 0;
-  int _postDislikes = 0;
-  static const double _buttonSize = 15;
-  static Route<Object?> _askForLogin(BuildContext context, Object? arguments) {
-    return loginPageBuilder(context, arguments);
-  }
+  /* static Route<Object?> _askForLogin(BuildContext context, Object? arguments) { */
+  /*   return loginPageBuilder(context, arguments); */
+  /* } */
 
   @override
   Widget build(BuildContext context) {
@@ -52,43 +48,58 @@ class _PostState extends State<Post> {
         ),
         PostContentPreview(),
         //TODO add onPressed to buttons
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-                onPressed: () {
-                  if (!_logedIn) {
-                    Navigator.of(context).restorablePush(_askForLogin);
-                  }
-                  ++_postLikes;
-                },
-                icon: const Icon(Icons.thumb_up, size: _buttonSize),
-                tooltip: "Like"),
-            IconButton(
-                onPressed: () {
-                  if (!_logedIn) {
-                    Navigator.of(context).restorablePush(_askForLogin);
-                  }
-                  ++_postDislikes;
-                },
-                icon: const Icon(Icons.thumb_down, size: _buttonSize),
-                tooltip: "Dislike"),
-            IconButton(
-                onPressed: () {
-                  Share.share(_postUrl);
-                },
-                icon: const Icon(Icons.share, size: _buttonSize),
-                tooltip: "Share"),
-            IconButton(
-                onPressed: () {
-                  if (!_logedIn) {
-                    Navigator.of(context).restorablePush(_askForLogin);
-                  }
-                },
-                icon: const Icon(Icons.bookmark, size: _buttonSize),
-                tooltip: "Bookmark"),
-          ],
-        )
+        /* Row( */
+        /*   mainAxisAlignment: MainAxisAlignment.spaceEvenly, */
+        /*   children: [ */
+        /*     IconButton( */
+        /*         onPressed: () { */
+        /*           if (!_logedIn) { */
+        /*             Navigator.of(context).restorablePush(_askForLogin); */
+        /*           } */
+        /*           setState(() { */
+        /*             _postLiked = !_postLiked; */
+        /*           }); */
+        /*         }, */
+        /*         icon: Icon(Icons.thumb_up, */
+        /*             size: _buttonSize, */
+        /*             color: _postLiked ? Colors.orange : Colors.grey), */
+        /*         tooltip: "Like"), */
+        /*     IconButton( */
+        /*         onPressed: () { */
+        /*           if (!_logedIn) { */
+        /*             Navigator.of(context).restorablePush(_askForLogin); */
+        /*           } */
+        /*           setState(() { */
+        /*             _postDisliked = !_postDisliked; */
+        /*           }); */
+        /*         }, */
+        /*         icon: Icon(Icons.thumb_down, */
+        /*             size: _buttonSize, */
+        /*             color: _postDisliked ? Colors.lightBlue : Colors.grey), */
+        /*         tooltip: "Dislike"), */
+        /*     IconButton( */
+        /*         onPressed: () { */
+        /*           Share.share(_postUrl); */
+        /*         }, */
+        /*         icon: const Icon(Icons.share, */
+        /*             size: _buttonSize, color: Colors.grey), */
+        /*         tooltip: "Share"), */
+        /*     IconButton( */
+        /*         onPressed: () { */
+        /*           if (!_logedIn) { */
+        /*             Navigator.of(context).restorablePush(_askForLogin); */
+        /*           } */
+        /*           setState(() { */
+        /*             _bookmarked = !_bookmarked; */
+        /*           }); */
+        /*         }, */
+        /*         icon: Icon(Icons.bookmark, */
+        /*             size: _buttonSize, */
+        /*             color: _bookmarked ? Colors.yellow : Colors.grey), */
+        /*         tooltip: "Bookmark"), */
+        /*   ], */
+        /* ) */
+        ButtonRow()
       ]));
     });
   }

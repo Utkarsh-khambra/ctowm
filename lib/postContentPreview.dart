@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'post_data.dart';
 
 class PostContentPreview extends StatefulWidget {
   const PostContentPreview({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class PostContentPreview extends StatefulWidget {
   State<PostContentPreview> createState() => _PostContentPreviewState();
 }
 
-class _PostContentPreviewState extends State<PostContentPreview> {
+class _PostContentPreviewState extends State<PostContentPreview> with Post {
   @override
   Widget build(BuildContext context) {
     return const Text(
